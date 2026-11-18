@@ -1,0 +1,18 @@
+class Solution {
+public:
+    long long reverse(int x) {      //chnaged function return type to long 
+        long long ans = 0;            // handles bigger values of ans than int can store
+
+        while(x != 0) {
+            int digit = x % 10;
+            ans = ans * 10 + digit;
+            x = x / 10;
+        }
+
+        if(ans > INT_MAX || ans < INT_MIN) {
+            return 0;                               //handle the given condition 
+        }
+
+        return ans;
+    }
+};
